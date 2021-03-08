@@ -13,7 +13,7 @@ These files should not be executed directly (so they miss +x).
 
 # Install
 
-The scripts are not installed. They are placed inside a python project directory.
+The scripts should not be installed to the system. They are placed inside a python project directory.
 
 ## If you prefer GIT submodules
 
