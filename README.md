@@ -18,7 +18,7 @@ The scripts should not be installed to the system. They are placed inside a pyth
 
 
 <details>
-<summary>If you prefer GIT subtrees.</summary><br/>
+<summary>If you prefer GIT subtrees</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -36,7 +36,7 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 </details>
 
 <details>
-<summary>If you prefer GIT submodules.</summary><br/>
+<summary>If you prefer GIT submodules</summary><br/>
 
 Submodule will add the scripts to the repository. But `git pull` for the repo will not get all the files from 
 the submodules. It will require additional steps to get the files. Submodules are weird.
