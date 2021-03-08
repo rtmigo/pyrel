@@ -26,7 +26,16 @@ $ git submodule add https://github.com/rtmigo/pyrel scripts/pyrel
 
 Update to latest version:
 ```bash
-git submodule update --remote
+$ cd /abc/pythonproject
+$ git submodule update --remote
+```
+
+Remove and forget about GIT submodules:
+
+```bash
+$ cd /abc/pythonproject
+$ git rm scripts/pyrel -f
+$ rm -rf .git/modules/scripts/pyrel
 ```
 
 ## If you prefer SVN
