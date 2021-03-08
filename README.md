@@ -15,6 +15,7 @@ These files should not be executed directly (so they miss +x).
 
 The scripts should not be installed to the system. They are placed inside a python project directory.
 
+<details>
 ## If you prefer GIT submodules
 
 Create `/abc/pythonproject/scripts/pyrel`:
@@ -30,13 +31,14 @@ $ cd /abc/pythonproject
 $ git submodule update --remote
 ```
 
-Remove and forget about GIT submodules:
+Remove the submodule:
 
 ```bash
 $ cd /abc/pythonproject
 $ git rm scripts/pyrel -f
 $ rm -rf .git/modules/scripts/pyrel
 ```
+</details>
 
 ## If you prefer SVN
 
