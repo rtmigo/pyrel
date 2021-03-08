@@ -16,7 +16,7 @@ These files should not be executed directly (so they miss +x).
 The scripts should not be installed to the system. They are placed inside a python project directory.
 
 <details>
-## If you prefer GIT submodules
+<summary>If you prefer GIT submodules.</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
