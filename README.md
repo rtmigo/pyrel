@@ -42,18 +42,18 @@ Update with the same command.
 
 # Use
 
-Lay code like that:
+The expected project layout is something like that:
 
 ```
-projectroot
+pythonproject
 | myprogram/
 | scripts/pyrel/   <-- the scripts belong here
 | setup.py
 | ... etc ...
-| test_pkg.sh
+| test_pkg.sh      <-- we will automate testing here
 ```
 
-Sample test_pkg.sh:
+Sample `test_pkg.sh`:
 
 ```
 #!/bin/bash
@@ -63,7 +63,7 @@ set -e
 source scripts/pyrel/setup.inc.sh
 
 ## TEST ##
-myprogram --version
+myprogram --version # just check the program runs and doesn't return error code
 
 ## TEAR DOWN ##
 cd "$scriptParentDir"
