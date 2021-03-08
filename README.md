@@ -18,6 +18,9 @@ The scripts should not be installed to the system. They are placed inside a pyth
 <details>
 <summary>If you prefer GIT submodules.</summary><br/>
 
+Git submodule will kinda add the scripts to the repository. But in many cases you will find files 
+of the module are missing. 
+
 Create `/abc/pythonproject/scripts/pyrel`:
 
 ```bash
