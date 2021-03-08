@@ -9,6 +9,35 @@ Reusable bash scrips that:
 
 These files should not be executed directly (so they miss +x).
 
+
+
+# Install
+
+The scripts are not installed. They reside inside a python project directory.
+
+### If you prefer SVN
+
+The same command will get sources and update them later.
+
+```bash
+$ cd /abc/pythonproject
+$ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
+```
+
+### If you prefer GIT submodules
+
+Add to project:
+
+```bash
+$ cd /abc/pythonproject
+$ git submodule add https://github.com/rtmigo/pyrel scripts/pyrel
+```
+
+Update to latest version:
+```bash
+git submodule update --remote
+```
+
 Lay code like that:
 
 ```
@@ -19,16 +48,6 @@ projectroot
 | ... etc ...
 | test_pkg.sh
 ```
-
-Add to project:
-
-```bash
-$ cd /abc/pythonproject
-$ git submodule add https://github.com/rtmigo/pyrel scripts/pyrel
-```
-
-- test
-
 
 Sample test_pkg.sh:
 
