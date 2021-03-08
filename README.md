@@ -18,8 +18,8 @@ The scripts should not be installed to the system. They are placed inside a pyth
 <details>
 <summary>If you prefer GIT submodules.</summary><br/>
 
-Submodule will add the scripts to the repository. But the `git pull` will not get the whole repo with submodules. 
-That means, `git pull` returns a broken project requiring additional steps. Submodules are weird.
+Submodule will add the scripts to the repository. But `git pull` for the repo will not get all the files from 
+the modules. With submodules additional steps are needed. Submodules are weird.
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
