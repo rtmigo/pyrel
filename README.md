@@ -15,6 +15,20 @@ These files should not be executed directly (so they miss +x).
 
 The scripts should not be installed to the system. They are placed inside a python project directory.
 
+
+
+<details>
+<summary>If you prefer GIT subtrees.</summary><br/>
+
+Create `/abc/pythonproject/scripts/pyrel`:
+
+```bash
+$ cd /abc/pythonproject
+$ git subtree add --prefix scripts/pyrel https://github.com/rtmigo/pyrel master
+```
+
+</details>
+
 <details>
 <summary>If you prefer GIT submodules.</summary><br/>
 
