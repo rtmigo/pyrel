@@ -13,16 +13,7 @@ These files should not be executed directly (so they miss +x).
 
 # Install
 
-The scripts are not installed. They reside inside a python project directory.
-
-### If you prefer SVN
-
-The same command will get sources and update them later.
-
-```bash
-$ cd /abc/pythonproject
-$ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
-```
+The scripts are not installed. They are placed inside a python project directory.
 
 ### If you prefer GIT submodules
 
@@ -37,6 +28,17 @@ Update to latest version:
 ```bash
 git submodule update --remote
 ```
+
+### If you prefer SVN
+
+The same command will get sources and update them later.
+
+```bash
+$ cd /abc/pythonproject
+$ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
+```
+
+# Use
 
 Lay code like that:
 
