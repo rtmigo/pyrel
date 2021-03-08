@@ -38,9 +38,6 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 <details>
 <summary>If you prefer GIT submodules</summary><br/>
 
-Submodule will add the scripts to the repository. But `git pull` for the repo will not get all the files from 
-the submodules. It will require additional steps to get the files. Submodules are weird.
-
 Create `/abc/pythonproject/scripts/pyrel`:
 
 ```bash
