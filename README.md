@@ -24,7 +24,13 @@ Create `/abc/pythonproject/scripts/pyrel`:
 
 ```bash
 $ cd /abc/pythonproject
-$ git subtree add --prefix scripts/pyrel https://github.com/rtmigo/pyrel master
+$ git subtree add --prefix scripts/pyrel https://github.com/rtmigo/pyrel master --squash
+```
+
+Update to latest version:
+```bash
+$ cd /abc/pythonproject
+$ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/rtmigo/pyrel master --squash
 ```
 
 </details>
@@ -57,7 +63,8 @@ $ rm -rf .git/modules/scripts/pyrel
 ```
 </details>
 
-## If you prefer SVN
+<details>
+<summary>If you prefer SVN</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -67,6 +74,10 @@ $ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
 ```
 
 Update with the same command.
+
+
+</details>
+
 
 # Use
 
