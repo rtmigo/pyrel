@@ -15,7 +15,7 @@ These files should not be executed directly (so they miss +x).
 
 The scripts are not installed. They are placed inside a python project directory.
 
-### If you prefer GIT submodules
+## If you prefer GIT submodules
 
 Add to project:
 
@@ -29,7 +29,7 @@ Update to latest version:
 git submodule update --remote
 ```
 
-### If you prefer SVN
+## If you prefer SVN
 
 The same command will get sources and update them later.
 
