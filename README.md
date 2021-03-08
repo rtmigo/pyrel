@@ -27,6 +27,9 @@ $ cd /abc/pythonproject
 $ git submodule add https://github.com/rtmigo/pyrel scripts/pyrel
 ```
 
+- test
+
+
 Sample test_pkg.sh:
 
 ```
