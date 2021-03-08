@@ -17,7 +17,7 @@ The scripts are not installed. They are placed inside a python project directory
 
 ## If you prefer GIT submodules
 
-Add to project:
+Create `/abc/pythonproject/scripts/pyrel`:
 
 ```bash
 $ cd /abc/pythonproject
@@ -31,12 +31,14 @@ git submodule update --remote
 
 ## If you prefer SVN
 
-The same command will get sources and update them later.
+Create `/abc/pythonproject/scripts/pyrel`:
 
 ```bash
 $ cd /abc/pythonproject
 $ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
 ```
+
+Update with the same command.
 
 # Use
 
