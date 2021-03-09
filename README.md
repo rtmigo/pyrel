@@ -21,12 +21,22 @@ Each environment is created in a temporary directory with `pyrel_venv_begin` and
 set -e && source pyrel.sh
 
 pyrel_venv_begin
-# now running in a temporary virtual environment
+# now running in a temporary virtual environment A
+pyrel_venv_end
+
+# the temporary enviroment A was deactivated and deleted
+
+pyrel_venv_begin
+# now running in temporary virtual environment B
 pyrel_venv_end
 
 pyrel_venv_begin
-# now running in other temporary virtual environment
-pyrel_venv_end
+# now running in temporary virtual environment C
+
+bad_command # oops, stopping execution
+
+# but bash will catch the error 
+# and delete the environment C before exit 
 ```
 
 Nesting is not supported
