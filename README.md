@@ -33,7 +33,7 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 
 <details><summary>If you prefer GIT submodules</summary><br/>
 
-No one should be judged by their tastes!
+No one should be judged by their tastes!?
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
