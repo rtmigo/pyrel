@@ -11,6 +11,10 @@ fi
 
 echo "OK, we're in the project root"
 
+####################################################################################################
+
+twine_check_strict=true # useful ?
+
 project_root_dir=$(realpath .)
 
 log() { printf '%s\n' "$*"; }
@@ -138,7 +142,11 @@ function build_package() {
 
 function check_package() {
   cd "$project_root_dir" || return 1
-  twine check ./dist/* --strict
+  if [ $twine_check_strict ]; then
+    twine check ./dist/* --strict
+  else
+    twine check ./dist/*
+  fi
 }
 
 function find_latest_file() {
