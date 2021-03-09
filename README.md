@@ -1,4 +1,4 @@
-![Generic badge](https://img.shields.io/badge/status-it_seems_to_work-orange.svg)
+![Generic badge](https://img.shields.io/badge/status-unstable-red.svg)
 ![Generic badge](https://img.shields.io/badge/OS-MacOS%20|%20Ubuntu-blue.svg)
 ![Generic badge](https://img.shields.io/badge/Python-3.7--3.9-blue.svg)
 [![Actions Status](https://github.com/rtmigo/pyrel/workflows/tests/badge.svg?branch=master)](https://github.com/rtmigo/pyrel/actions)
@@ -7,7 +7,7 @@
 
 Reusable shell script for building and testing Python packages.
 
-Using this file allows you to write less boilerplate code.
+Using this file allows you to write less boilerplate code when using 
 
 # What is pyrel
 
