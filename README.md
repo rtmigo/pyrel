@@ -48,7 +48,7 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 # imported file: project/scripts/pyrel.sh
 ```
 
-## Test for a command-line utility
+## A test for a command-line utility
 
 ``` bash
 #!/bin/bash
