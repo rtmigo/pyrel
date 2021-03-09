@@ -11,6 +11,23 @@ fi
 
 echo "OK, we're in the project root"
 
+function realpath() {
+  # refactored code from https://stackoverflow.com/a/18443300
+  local OURPWD
+  OURPWD=$PWD
+  cd "$(dirname "$1")"
+  local LINK
+  LINK=$(readlink "$(basename "$1")")
+  while [ "$LINK" ]; do
+    cd "$(dirname "$LINK")"
+    LINK=$(readlink "$(basename "$1")")
+  done
+  local REALPATH
+  REALPATH="$PWD/$(basename "$1")"
+  cd "$OURPWD"
+  echo "$REALPATH"
+}
+
 ####################################################################################################
 
 twine_check_strict=true # useful ?
