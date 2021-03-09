@@ -5,6 +5,21 @@
 
 Bash functions for building and testing Python packages.
 
+```
+pythonproject
+| mypropram          <-- python project files
+| tests              <-- python project files
+| setup.py           <-- python project files
+|
+| build_my_package.sh   <-- a script uses pyrel
+| test_my_package.sh    <-- a script uses pyrel
+| pyrel.sh              <-- also placed somewhere in the project
+
+```
+`pyrel.sh` provides functionalities for building and testing.
+
+So `test_package.sh` and `build_package.sh` can be extremely short and simple.
+
 # Install
 
 `pyrel.sh` is a script file with no external dependencies. Just download it and `source` in a Python project directory.
