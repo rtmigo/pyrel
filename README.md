@@ -26,14 +26,25 @@ extremely short and simple.
 `pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere 
 in the project directory.
 
-``` bash
-$ cd /abc/myproject
-$ source path/to/pyrel.sh
-```
 
 # Sample scripts
 
+`pyrel` should be imported from the python project dir, i.e. the dir containing `setup.py`.
+
+``` bash
+$ cd /abc/myproject
+$ source path/to/pyrel.sh  # ok because /abc/myproject/setup.py exists 
+```
+
+``` bash
+$ cd /abc/photos_(not_project)
+$ source path/to/pyrel.sh  # shows error, does nothing
+```
+
+
 ## Import the pyrel
+
+
 
 ``` bash
 #!/bin/bash
