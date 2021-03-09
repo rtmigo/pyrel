@@ -11,6 +11,28 @@ $ cd /abc/myproject
 $ source path/to/pyrel.sh
 ```
 
+# Samples
+
+## Testing a command-line utility
+
+``` bash
+#!/bin/bash
+set -e && source pyrel.sh
+
+# build package, install it into virtual 
+# environment with pip
+pyrel_test_begin
+
+# check, that we can run program by name 
+myprogram --help       
+myprogram --version
+
+#remove_dist # remove generated package 
+pyrel_test_end
+```
+
+# Functions
+
 ## Temporary virtual environments
 
 Each environment is created in a temporary directory with `pyrel_venv_begin` and removed with
@@ -59,20 +81,3 @@ pyrel_venv_end  # exiting, so not running this
 # RELAX: bash will delete the temporary files anyway  
 ```
 
-## Testing a command-line utility
-
-``` bash
-#!/bin/bash
-set -e && source pyrel.sh
-
-# build package, install it into virtual 
-# environment with pip
-pyrel_test_begin
-
-# check, that we can run program by name 
-myprogram --help       
-myprogram --version
-
-#remove_dist # remove generated package 
-pyrel_test_end
-```
