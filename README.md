@@ -53,7 +53,7 @@ $ cd /abc/pythonproject
 $ git submodule update --remote
 ```
 
-Remove the submodule:
+Remove if you change your mind:
 
 ```bash
 $ cd /abc/pythonproject
