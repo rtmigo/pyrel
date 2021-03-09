@@ -4,7 +4,7 @@ Bash functions for building and testing Python packages.
 
 # Install
 
-`pyrel.sh` is a small script file. `source` it in a Python project directory.
+`pyrel.sh` is a script file with no external dependencies. Just download it and `source` in a Python project directory.
 
 ``` bash
 $ cd /abc/myproject
