@@ -52,7 +52,7 @@ in the project directory.
 set -e && source path/to/pyrel.sh
 ```
 
-## Make sure you're in the project directory
+**But Make sure you're in the project directory**
 
 ``` bash
 $ cd /abc/myproject
