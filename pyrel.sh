@@ -4,18 +4,9 @@
 
 set -e
 
-if [ ! -f "./setup.py" ]; then
-  echo "./setup.py not found. Please run the script python project directory"
-  exit 1
-fi
-
-echo "OK, we're in the project root"
-
-twine_check_strict=true # useful ?
-
-project_root_dir=$(realpath .)
-
 ####################################################################################################
+
+# without the realpath we cannot store the project directory, so we start with it
 
 function realpath() {
   # emulating realpath for MacOS (10.14 does not have it @2021)
@@ -36,6 +27,19 @@ function realpath() {
 }
 
 ####################################################################################################
+
+if [ ! -f "./setup.py" ]; then
+  echo "./setup.py not found. Please run the script python project directory"
+  exit 1
+fi
+
+echo "OK, we're in the project root"
+
+project_root_dir=$(realpath .)
+
+####################################################################################################
+
+twine_check_strict=true # useful ?
 
 log() { printf '%s\n' "$*"; }
 error() { log "ERROR: $*" >&2; }
