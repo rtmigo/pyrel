@@ -79,9 +79,7 @@ pythonproject
 ```
 
 
-# Test a package that installs as command-line utility
-
-## test_package.sh
+# Test a command-line utility package 
 
 ```bash
 #!/bin/bash
