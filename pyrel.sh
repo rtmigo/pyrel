@@ -6,7 +6,7 @@ set -e
 
 ####################################################################################################
 
-# without the realpath we cannot store the project directory, so we start with it
+# without the realpath we cannot get the real project directory, so we start with it
 
 function realpath() {
   # emulating realpath for MacOS (10.14 does not have it @2021)
