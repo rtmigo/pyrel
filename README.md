@@ -1,4 +1,4 @@
-![Generic badge](https://img.shields.io/badge/status-it_seems_to_work-yellow.svg)
+![Generic badge](https://img.shields.io/badge/status-it_seems_to_work-orange.svg)
 ![Generic badge](https://img.shields.io/badge/OS-MacOS%20|%20Ubuntu-blue.svg)
 
 # [pyrel](https://github.com/rtmigo/pyrel)
