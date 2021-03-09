@@ -4,18 +4,18 @@ Bash functions for building and testing Python packages.
 
 # Install
 
-`pyrel.sh` is just a small script file meant to be included when you're at the project root:
+`pyrel.sh` is a small script file. `source` it in a Python project directory.
 
-```bash
-cd /abc/myproject
-source path/to/pyrel.sh
+``` bash
+$ cd /abc/myproject
+$ source path/to/pyrel.sh
 ```
 
 # Test a command-line utility
 
 When building a package that should be installed as a command line utility with pip3.  
 
-```bash
+``` bash
 #!/bin/bash
 set -e && source pyrel.sh
 
