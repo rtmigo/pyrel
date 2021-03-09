@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: (c) 2021 Art Galkin <ortemeo@gmail.com>
 # SPDX-License-Identifier: BSD-3-Clause
+# See https://github.com/rtmigo/pyrel#pyrel
 
 set -e
 
@@ -96,7 +97,7 @@ function pyrel_venv_begin() {
     fatal "Nesting venvs is not supported"
   fi
 
-  temp_venv_dir=$(mktemp -d -t venv)
+  temp_venv_dir=$(mktemp -d -t venv-XXXXXXX)
   log pyrel_venv_begin: creating "$temp_venv_dir"
   python3 -m venv "$temp_venv_dir"
   # shellcheck disable=SC1090
@@ -156,10 +157,34 @@ function install_package_from_latest_whl() {
   pip3 install "$latest_whl_file" --force-reinstall
 }
 
+function cd_project() {
+  cd "$project_root_dir" || fatal "Failed to CD to the project dir"
+}
+
+function rmdir_with_msg() {
+  log "Removing $1"
+  # shellcheck disable=SC2086
+  rm -rf "$1"
+}
+
+function if_dir_unexisting_remove_on_exit() {
+    if [ ! -d "$1" ]; then
+      # directory does no exist now, so if we create it, we'll remove it
+      log "WILL REMOVE $1 on exit"
+      trap_add "rmdir_with_msg $1" EXIT
+    else
+      log "WILL NOT REMOVE $1 on exit"
+    fi
+}
+
 function pyrel_test_begin() {
 
-  [ ! -d ".dist" ] && remove_dist=true
-  [ ! -d ".build" ] && remove_build=true
+  # we will optionally remove dist, build and egg_info from the project dir
+  # if there weren't there before the test
+
+  if_dir_unexisting_remove_on_exit "$project_root_dir/dist"
+  if_dir_unexisting_remove_on_exit "$project_root_dir/build"
+  if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg_info"
 
   echo "== BUILDING PACKAGE =="
   pyrel_venv_begin
@@ -185,18 +210,9 @@ function pyrel_test_end() {
   # Python 3.7 sometimes fails when trying to --clear venv while the current
   # directory is created by mktemp. That's why we move to the project before
   # ending the venv
-  cd "$project_root_dir" || return 1
+  cd_project
   pyrel_venv_end
-
-  [ -n "$remove_dist" ] && rm -vrf .dist
-  [ -n "$remove_build" ] && rm -vrf .build
 
   rm -rf "$nowhere_dir"
   echo "All done."
 }
-
-#function remove_dist() {
-#  cd "$project_root_dir" || return 1
-#  rm -rf ./build ./dist ./*.egg-info
-#}
-
