@@ -58,13 +58,33 @@ set -e && source pyrel.sh
 # environment with pip
 pyrel_test_begin
 
-# check, that we can run program by name 
+# check, that we can run the program by name 
+# (so it's visible from the $PATH) 
 myprogram --help       
 myprogram --version
 
 # remove generated package 
 pyrel_test_end
 ```
+
+## A test for a module
+
+``` bash
+#!/bin/bash
+set -e && source pyrel.sh
+
+# build package, install it into virtual 
+# environment with pip
+pyrel_test_begin
+
+# check, that we can import this module by name 
+# (so it's installed) 
+python3 -c "import mymodule"
+
+# remove generated package 
+pyrel_test_end
+```
+
 
 # Details
 
