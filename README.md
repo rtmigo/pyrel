@@ -13,7 +13,24 @@ $ source path/to/pyrel.sh
 
 # Samples
 
-## Testing a command-line utility
+## Import the pyrel
+
+``` bash
+#!/bin/bash
+set -e && source path/to/pyrel.sh
+```
+
+You can also use a path relative to the calling script
+
+``` bash
+#!/bin/bash
+set -e && source "${0%/*}/scripts/pyrel.sh"
+
+# current file:  project/this.sh
+# imported file: project/scripts/pyrel.sh
+```
+
+## Test for a command-line utility
 
 ``` bash
 #!/bin/bash
@@ -27,11 +44,11 @@ pyrel_test_begin
 myprogram --help       
 myprogram --version
 
-#remove_dist # remove generated package 
+# remove generated package 
 pyrel_test_end
 ```
 
-# Functions
+# Details
 
 ## Temporary virtual environments
 

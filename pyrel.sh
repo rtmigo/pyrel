@@ -154,6 +154,7 @@ function find_latest_file() {
 function install_package_from_latest_whl() {
   local latest_whl_file
   latest_whl_file=$(find_latest_file "$project_root_dir"/dist/*.whl)
+  pip3 install --upgrade pip
   pip3 install "$latest_whl_file" --force-reinstall
 }
 
@@ -199,6 +200,9 @@ function pyrel_test_begin() {
   # move from the current directory to random one
   nowhere_dir=$(mktemp -d -t ci-XXXXXXXXXX)
   cd "$nowhere_dir" || return 1
+
+  #echo "== INSTALLING PACKAGE =="
+  #python3 setup.py test
 
   echo "== RUNNING =="
 }
