@@ -52,7 +52,6 @@ pyrel_test_end
 
 ## Temporary virtual environments
 
-Each environment is created in a temporary directory with `pyrel_venv_begin` and removed with 
 `pyrel_venv_end`.
 
 ``` bash
