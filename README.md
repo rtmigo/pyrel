@@ -9,7 +9,7 @@ Reusable bash scrips that:
 
 These files should not be executed directly (so they miss +x).
 
-# Install :)
+# Install
 
 These files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
 using them with GitHub actions.
