@@ -11,29 +11,31 @@ fi
 
 echo "OK, we're in the project root"
 
-function realpath() {
-  # emulating realpath for MacOS (it does not have it in 2021)
-  # refactored code from https://stackoverflow.com/a/18443300
-  local OURPWD
-  OURPWD=$PWD
-  cd "$(dirname "$1")"
-  local LINK
-  LINK=$(readlink "$(basename "$1")")
-  while [ "$LINK" ]; do
-    cd "$(dirname "$LINK")"
-    LINK=$(readlink "$(basename "$1")")
-  done
-  local REALPATH
-  REALPATH="$PWD/$(basename "$1")"
-  cd "$OURPWD"
-  echo "$REALPATH"
-}
-
-####################################################################################################
-
 twine_check_strict=true # useful ?
 
 project_root_dir=$(realpath .)
+
+####################################################################################################
+
+function realpath() {
+  # emulating realpath for MacOS (10.14 does not have it @2021)
+  # refactored code from https://stackoverflow.com/a/18443300
+  local our_pwd
+  our_pwd=$PWD
+  cd "$(dirname "$1")"
+  local current_link
+  current_link=$(readlink "$(basename "$1")")
+  while [ "$current_link" ]; do
+    cd "$(dirname "$current_link")"
+    current_link=$(readlink "$(basename "$1")")
+  done
+  local result
+  result="$PWD/$(basename "$1")"
+  cd "$our_pwd"
+  echo "$result"
+}
+
+####################################################################################################
 
 log() { printf '%s\n' "$*"; }
 error() { log "ERROR: $*" >&2; }
