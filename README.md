@@ -91,7 +91,8 @@ pythonproject
 
 ```bash
 #!/bin/bash
-set -e && source "${0%/*}"/scripts/pyrel/include.sh
+set -e && source "${0%/*}/scripts/pyrel/pyrel.sh"
+
 package_test_setup
 
 myprogram --help
