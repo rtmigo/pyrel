@@ -52,8 +52,6 @@ pyrel_test_end
 
 ## Temporary virtual environments
 
-`pyrel_venv_end`.
-
 ``` bash
 #!/bin/bash
 set -e && source pyrel.sh
