@@ -17,9 +17,9 @@ pythonproject
 | pyrel.sh              <-- also placed somewhere in the project
 
 ```
-`pyrel.sh` provides reusable bash functions.
-
-So `test_package.sh` and `build_package.sh` can be extremely short and simple.
+`pyrel.sh` contains most of the boilerplate code, so `test_package.sh` and `build_package.sh` 
+can be 
+extremely short and simple.
 
 # Install
 
