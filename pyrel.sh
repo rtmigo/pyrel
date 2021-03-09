@@ -185,7 +185,7 @@ function pyrel_test_begin() {
 
   if_dir_unexisting_remove_on_exit "$project_root_dir/dist"
   if_dir_unexisting_remove_on_exit "$project_root_dir/build"
-  if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg_info"
+  if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg_info" # FIXME this dir is not deleted
 
   echo "== BUILDING PACKAGE =="
   pyrel_venv_begin
@@ -200,6 +200,7 @@ function pyrel_test_begin() {
   # move from the current directory to random one
   nowhere_dir=$(mktemp -d -t ci-XXXXXXXXXX)
   cd "$nowhere_dir" || return 1
+  trap_add "rmdir_with_msg $nowhere_dir" EXIT
 
   #echo "== INSTALLING PACKAGE =="
   #python3 setup.py test
@@ -217,6 +218,6 @@ function pyrel_test_end() {
   cd_project
   pyrel_venv_end
 
-  rm -rf "$nowhere_dir"
+#  rm -rf "$nowhere_dir"
   echo "All done."
 }
