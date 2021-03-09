@@ -202,7 +202,6 @@ function rmdir_with_msg() {
 
 
 function if_dir_unexisting_remove_on_exit() {
-    #if [ ! -d "$1" ]; then
     if ! compgen -G "$1" > /dev/null ; then
       # directory does not exist now, so if we create it, we'll remove it
       log "WILL REMOVE $1 on exit"
@@ -236,9 +235,6 @@ function pyrel_test_begin() {
   cd "$nowhere_dir" || return 1
   trap_add "rmdir_with_msg $nowhere_dir" EXIT
 
-  #echo "== INSTALLING PACKAGE =="
-  #python3 setup.py test
-
   echo "== RUNNING =="
 }
 
@@ -252,6 +248,5 @@ function pyrel_test_end() {
   cd_project
   pyrel_venv_end
 
-#  rm -rf "$nowhere_dir"
   echo "All done."
 }
