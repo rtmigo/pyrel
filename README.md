@@ -27,9 +27,10 @@ extremely short and simple.
 in the project directory.
 
 
-# Sample scripts
+# How to import 
 
-`pyrel` should be imported from the python project dir, i.e. the dir containing `setup.py`.
+When you import `pyrel`, you must be in the python project 
+directory, i.e. the directory containing `setup.py`.
 
 ``` bash
 $ cd /abc/myproject
@@ -41,9 +42,22 @@ $ cd /abc/photos_(not_project)
 $ source path/to/pyrel.sh  # shows error, does nothing
 ```
 
+So even if you place this into a `myscript.sh` ...
 
-## Import the pyrel
+``` bash
+#!/bin/bash
+source path/to/pyrel.sh
+```
 
+The `myscript.sh` should only be called from the project directory
+
+``` bash
+$ cd /abc/myproject
+$ ./myscript.sh
+```
+
+
+## Copy-paste
 
 
 ``` bash
@@ -61,7 +75,9 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 # imported file: project/scripts/pyrel.sh
 ```
 
-## A test for a module
+# Sample scripts
+
+## How to test a module
 
 ``` bash
 #!/bin/bash
@@ -79,7 +95,7 @@ python3 -c "import mymodule"
 pyrel_test_end
 ```
 
-## A test for a command-line utility
+## How to test a command-line utility
 
 ``` bash
 #!/bin/bash
