@@ -100,7 +100,7 @@ pyrel_venv_begin
 # now running in a temporary virtual environment A
 pyrel_venv_end
 
-# the temporary enviroment A was deactivated and deleted
+# the temporary environment A was deactivated and deleted
 
 pyrel_venv_begin
 # now running in a temporary virtual environment B
