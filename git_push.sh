@@ -3,10 +3,9 @@ set -e
 
 # pushes the pyrel subtree to github
 
-if [ "$#" -ne 1 ];
-then
-    echo "Usage: $(basename "$0") <commit message>"
-    exit 2
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $(basename "$0") <commit message>"
+  exit 2
 fi
 
 cd "${0%/*}/../.."
