@@ -9,16 +9,12 @@ Reusable bash scrips that:
 
 These files should not be executed directly (so they miss +x).
 
-
-
 # Install
 
-The scripts should not be installed to the system. They are placed inside a python project directory.
+These files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
+using them with GitHub actions.
 
-
-
-<details>
-<summary>If you prefer GIT subtrees</summary><br/>
+<details><summary>If you prefer GIT subtrees</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -35,8 +31,7 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 
 </details>
 
-<details>
-<summary>If you prefer GIT submodules</summary><br/>
+<details><summary>If you prefer GIT submodules</summary><br/>
 
 No one should be judged by their tastes.
 
@@ -62,8 +57,7 @@ $ rm -rf .git/modules/scripts/pyrel
 ```
 </details>
 
-<details>
-<summary>If you prefer SVN</summary><br/>
+<details><summary>If you prefer SVN</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -73,7 +67,6 @@ $ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
 ```
 
 Update with the same command.
-
 
 </details>
 
