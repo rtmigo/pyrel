@@ -11,9 +11,7 @@ $ cd /abc/myproject
 $ source path/to/pyrel.sh
 ```
 
-# Test a command-line utility
-
-When building a package that should be installed as a command line utility with pip3.  
+## Testing a command-line utility
 
 ``` bash
 #!/bin/bash
