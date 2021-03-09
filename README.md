@@ -5,7 +5,7 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-This bash script will help to: 
+This bash script will: 
 
 * build your Python package (with [twine](https://pypi.org/project/twine/))
 * install it with pip3 into a temporary [virtual environment](https://docs.python.org/3/library/venv.html) 
