@@ -2,8 +2,6 @@
 
 Bash functions for building and testing Python packages.
 
-#!!! The `package_test_teardown` function removes `./build`, `./dist`, `./*.egg-info` from the
-
 # Install
 
 `pyrel.sh` is just a small script file meant to be included when you're at the project root:
@@ -95,14 +93,18 @@ When building a package that should be installed as a command line utility with 
 
 ```bash
 #!/bin/bash
-set -e && source "${0%/*}/scripts/pyrel/pyrel.sh"
+set -e && source pyrel.sh
 
+# build package, install it into virtual 
+# environment with pip
 package_test_setup
 
+# check, that we can run program by name 
 myprogram --help       
 myprogram --version
 
-package_test_teardown
+remove_dist # remove generated package 
+package_test_teardown # remove temporary files
 ```
 
 - **pyrel**: builds a package from the python module
