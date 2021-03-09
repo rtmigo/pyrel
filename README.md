@@ -29,7 +29,7 @@ $ cd /abc/myproject
 $ source path/to/pyrel.sh
 ```
 
-# Samples
+# Sample scripts
 
 ## Import the pyrel
 
