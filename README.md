@@ -44,7 +44,7 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 # imported file: project/scripts/pyrel.sh
 ```
 
-## Also make sure you're in the project directory
+## Make sure you're in the project directory
 
 ``` bash
 $ cd /abc/myproject
