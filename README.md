@@ -11,7 +11,7 @@ This script will help to:
 * install it with pip3 into a temporary [virtual environment](https://docs.python.org/3/library/venv.html) 
 * let you check whether it really installed there
 
-This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io)).
+This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
 
 # What is pyrel
 
