@@ -14,8 +14,8 @@ pythonproject
 | tests              <-- python project files
 | setup.py           <-- python project files
 |
-| build_my_package.sh   <-- a script that use pyrel
-| test_my_package.sh    <-- a script that use pyrel
+| build_my_package.sh   <-- a script that use pyrel.sh
+| test_my_package.sh    <-- a script that use pyrel.sh
 | pyrel.sh              <-- also placed somewhere in the project
 
 ```
