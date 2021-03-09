@@ -27,16 +27,8 @@ pyrel_venv_end
 # the temporary enviroment A was deactivated and deleted
 
 pyrel_venv_begin
-# now running in temporary virtual environment B
+# now running in a temporary virtual environment B
 pyrel_venv_end
-
-pyrel_venv_begin
-# now running in temporary virtual environment C
-
-bad_command # oops, stopping execution
-
-# but bash will catch the error 
-# and delete the environment C before exit 
 ```
 
 Nesting is not supported
@@ -50,9 +42,22 @@ pyrel_venv_end
 pyrel_venv_end
 ```
 
+Temporary environments will be removed if shell catches exit signal  
 
+``` bash
+#!/bin/bash
 
+set -e  # we will fail on all errors 
+source pyrel.sh 
 
+pyrel_venv_begin
+
+bad_command  # oops, exiting because of error 
+
+pyrel_venv_end  # exiting, so not running this
+
+# RELAX: bash will delete the temporary files anyway  
+```
 
 ## Testing a command-line utility
 
