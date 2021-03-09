@@ -26,7 +26,7 @@ can call previously unavailable commands such as `build_package`.
 
 ```
 pythonproject
-| mypropram          <-- python project files
+| myprogram          <-- python project files
 | tests              <-- python project files
 | setup.py           <-- python project files
 |
