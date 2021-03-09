@@ -1,4 +1,7 @@
-# pyrel
+![Generic badge](https://img.shields.io/badge/status-works_for_me-green.svg)
+![Generic badge](https://img.shields.io/badge/OS-MacOS%20|%20Ubuntu-blue.svg)
+
+# [pyrel](https://github.com/rtmigo/pyrel)
 
 Bash functions for building and testing Python packages.
 
