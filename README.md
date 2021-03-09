@@ -36,16 +36,6 @@ in the project directory.
 set -e && source path/to/pyrel.sh
 ```
 
-You can also use a path relative to the calling script
-
-``` bash
-#!/bin/bash
-set -e && source "${0%/*}/scripts/pyrel.sh"
-
-# current file:  project/this.sh
-# imported file: project/scripts/pyrel.sh
-```
-
 ## Make sure you're in the project directory
 
 ``` bash
