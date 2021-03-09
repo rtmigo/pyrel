@@ -1,5 +1,6 @@
 ![Generic badge](https://img.shields.io/badge/status-it_seems_to_work-orange.svg)
 ![Generic badge](https://img.shields.io/badge/OS-MacOS%20|%20Ubuntu-blue.svg)
+![Generic badge](https://img.shields.io/badge/Python-3.7--3.9-blue.svg)
 [![Actions Status](https://github.com/rtmigo/pyrel/workflows/tests/badge.svg?branch=master)](https://github.com/rtmigo/pyrel/actions)
 
 # [pyrel](https://github.com/rtmigo/pyrel)

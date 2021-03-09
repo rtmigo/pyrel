@@ -13,7 +13,7 @@ on:
       - '**.txt'
 
 jobs:
-  build1:
+  test-cmdline:
     runs-on: ${{ matrix.os }}
 
     #runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
         cd sample_project
         ./test_pkg_as_cmdline.sh
 
-  build2:
+  test-module:
       runs-on: ${{ matrix.os }}
 
       #runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
       - name: Run the test
         run: |
           cd sample_project
-          ./test_pkg_as_cmdline.sh
+          ./test_pkg_as_module.sh
