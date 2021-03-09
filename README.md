@@ -48,25 +48,6 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 # imported file: project/scripts/pyrel.sh
 ```
 
-## A test for a command-line utility
-
-``` bash
-#!/bin/bash
-set -e && source pyrel.sh
-
-# build package, install it into virtual 
-# environment with pip
-pyrel_test_begin
-
-# check, that we can run the program by name 
-# (so it's visible from the $PATH) 
-myprogram --help       
-myprogram --version
-
-# remove generated package 
-pyrel_test_end
-```
-
 ## A test for a module
 
 ``` bash
@@ -85,6 +66,24 @@ python3 -c "import mymodule"
 pyrel_test_end
 ```
 
+## A test for a command-line utility
+
+``` bash
+#!/bin/bash
+set -e && source pyrel.sh
+
+# build package, install it into virtual 
+# environment with pip
+pyrel_test_begin
+
+# check, that we can run the program by name 
+# (so it's visible from the $PATH) 
+myprogram --help       
+myprogram --version
+
+# remove generated package 
+pyrel_test_end
+```
 
 # Details
 
