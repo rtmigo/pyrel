@@ -87,7 +87,9 @@ pythonproject
 ```
 
 
-# Test a command-line utility package 
+# Test a command-line utility
+
+When building a package that should be installed as a command line utility with pip3.  
 
 ```bash
 #!/bin/bash
@@ -95,14 +97,14 @@ set -e && source "${0%/*}/scripts/pyrel/pyrel.sh"
 
 package_test_setup
 
-myprogram --help
+myprogram --help       
 myprogram --version
 
 package_test_teardown
 ```
 
 - **pyrel**: builds a package from the python module
-- **pyrel**: installs the newly built package into a virtual environment
+- **pyrel**: uses pip3 to install the newly built package into a virtual environment
 - **user**: calls the program by name (so we'll know it is added to path)
 - **user**: optionally runs it again (so we'll know the program ends without error code)
 - **pyrel**: deletes all the temp files created
