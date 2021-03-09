@@ -42,7 +42,7 @@ pyrel_venv_end
 pyrel_venv_end
 ```
 
-Temporary environments will be removed if shell catches exit signal  
+Temporary environments will be removed on errors too  
 
 ``` bash
 #!/bin/bash
