@@ -4,7 +4,7 @@ Bash scripts for building and testing Python packages.
 
 # Install
 
-The `pyrel` files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
+The `pyrel` files should be just **placed in the project directory**. This allows, for example, 
 using them with GitHub actions.
 
 <details><summary>If you prefer GIT subtrees</summary><br/>
