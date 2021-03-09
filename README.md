@@ -20,7 +20,7 @@ I needed code that was equally easy to run on a local machine and as part of Git
 # What is pyrel
 
 A single `pyrel.sh` file, that declares several bash functions. After you `source pyrel.sh`, you 
-can call previously unavailable functions such as `build_package`.
+can call previously unavailable commands such as `build_package`.
 
 `pyrel.sh` is meant to be placed inside the project.
 
