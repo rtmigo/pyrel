@@ -1,17 +1,17 @@
-# [draft] pyrel 
+# pyrel
 
-Reusable bash scrips that:
+Bash scripts for building and testing Python packages.
 
-- build a package from the python module
-- install a newly built package into a virtual environment
-- let the user run the module
-- delete all the temp files created
-
-These files should not be executed directly (so they miss +x).
+Testing a package for command-line program:
+- [pyrel] builds a package from the python module
+- [pyrel] installs the newly built package into a virtual environment
+- [user] calls the program by name (so we'll know it is added to path)
+- [user] optionally runs it again (so we'll know the program ends without error code)
+- [pyrel] deletes all the temp files created
 
 # Install
 
-These files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
+The `pyrel` files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
 using them with GitHub actions.
 
 <details><summary>If you prefer GIT subtrees</summary><br/>
@@ -92,7 +92,7 @@ set -e && cd "${0%/*}"
 source scripts/pyrel/include.sh
 package_test_setup
 
-flocagen --help
+myprogram --help
 
 package_test_teardown
 ```
