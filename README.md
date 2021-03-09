@@ -5,8 +5,16 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-A single `pyrel.sh` file, that provides functions for building and testing Python 
-packages.
+Reusable shell script for building and testing Python packages.
+
+Using this file allows you to write less boilerplate code.
+
+# What is pyrel
+
+A single `pyrel.sh` file, that provides functions. After you `source pyrel.sh`, you can call 
+functions like `build_package`.
+
+`pyrel.sh` is meant to be placed inside the project.
 
 ```
 pythonproject
