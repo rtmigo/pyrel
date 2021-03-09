@@ -29,36 +29,6 @@ in the project directory.
 
 # How to import
 
-### Make sure you're in the project directory
-
-``` bash
-$ cd /abc/myproject
-$ source path/to/pyrel.sh  # ok because /abc/myproject/setup.py exists 
-```
-
-``` bash
-$ cd /abc/photos_(not_project)
-$ source path/to/pyrel.sh  # shows error, does nothing
-```
-
-So even if you place this into a `myscript.sh` ...
-
-``` bash
-#!/bin/bash
-source path/to/pyrel.sh
-```
-
-The `myscript.sh` should only be called from the project directory
-
-``` bash
-$ cd /abc/myproject
-$ ./myscript.sh
-```
-
-
-### Copy-paste
-
-
 ``` bash
 #!/bin/bash
 set -e && source path/to/pyrel.sh
@@ -72,6 +42,26 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 
 # current file:  project/this.sh
 # imported file: project/scripts/pyrel.sh
+```
+
+## Also make sure you're in the project directory
+
+``` bash
+$ cd /abc/myproject
+$ source path/to/pyrel.sh  # ok because /abc/myproject/setup.py exists 
+```
+
+``` bash
+$ cd /abc/photos_(not_project)
+$ source path/to/pyrel.sh  # shows error, does nothing
+```
+
+So even if you place the `source` into a `myscript.sh`, this file should only be called from the 
+project directory
+
+``` bash
+$ cd /abc/myproject
+$ ./myscript.sh
 ```
 
 # Sample scripts
