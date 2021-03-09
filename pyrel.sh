@@ -165,12 +165,14 @@ function cd_project() {
 function rmdir_with_msg() {
   log "Removing $1"
   # shellcheck disable=SC2086
-  rm -rf "$1"
+  rm -rf "$1" #{1}
 }
 
+
 function if_dir_unexisting_remove_on_exit() {
-    if [ ! -d "$1" ]; then
-      # directory does no exist now, so if we create it, we'll remove it
+    #if [ ! -d "$1" ]; then
+    if ! compgen -G "$1" > /dev/null ; then
+      # directory does not exist now, so if we create it, we'll remove it
       log "WILL REMOVE $1 on exit"
       trap_add "rmdir_with_msg $1" EXIT
     else
@@ -185,7 +187,7 @@ function pyrel_test_begin() {
 
   if_dir_unexisting_remove_on_exit "$project_root_dir/dist"
   if_dir_unexisting_remove_on_exit "$project_root_dir/build"
-  if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg_info" # FIXME this dir is not deleted
+  if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg-info"
 
   echo "== BUILDING PACKAGE =="
   pyrel_venv_begin
