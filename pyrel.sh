@@ -200,7 +200,6 @@ function rmdir_with_msg() {
   rm -rf "$1" #{1}
 }
 
-
 function if_dir_unexisting_remove_on_exit() {
     if ! compgen -G "$1" > /dev/null ; then
       # directory does not exist now, so if we create it, we'll remove it
