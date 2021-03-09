@@ -1,3 +1,4 @@
-This a minimalistic project that use pyrel.
+This is a minimalistic sample project that use pyrel.
 
-This project is also used in pyrel's CI tests.
+This project is also used in pyrel's CI tests. So the packages are built from
+it each time an update is pushed to GitHub.
