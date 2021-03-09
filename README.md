@@ -3,7 +3,8 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-Bash functions for building and testing Python packages.
+A single `pyrel.sh` file, that provides functions for building and testing Python 
+packages.
 
 ```
 pythonproject
@@ -16,7 +17,7 @@ pythonproject
 | pyrel.sh              <-- also placed somewhere in the project
 
 ```
-`pyrel.sh` provides functionalities for building and testing.
+`pyrel.sh` provides reusable bash functions.
 
 So `test_package.sh` and `build_package.sh` can be extremely short and simple.
 
