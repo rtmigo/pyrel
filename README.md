@@ -13,6 +13,10 @@ This script will help to:
 
 This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
 
+### Why I made this
+
+I needed code that was equally easy to run on a local machine and as part of GitHub Actions.
+
 # What is pyrel
 
 A single `pyrel.sh` file, that provides functions. After you `source pyrel.sh`, you can call 
