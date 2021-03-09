@@ -27,10 +27,9 @@ extremely short and simple.
 in the project directory.
 
 
-# How to import 
+# How to import
 
-When you import `pyrel`, you must be in the python project 
-directory, i.e. the directory containing `setup.py`.
+### Make sure you're in the project directory
 
 ``` bash
 $ cd /abc/myproject
@@ -57,7 +56,7 @@ $ ./myscript.sh
 ```
 
 
-## Copy-paste
+### Copy-paste
 
 
 ``` bash
