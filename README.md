@@ -3,11 +3,11 @@
 Bash scripts for building and testing Python packages.
 
 Testing a package for command-line program:
-- [pyrel] builds a package from the python module
-- [pyrel] installs the newly built package into a virtual environment
-- [user] calls the program by name (so we'll know it is added to path)
-- [user] optionally runs it again (so we'll know the program ends without error code)
-- [pyrel] deletes all the temp files created
+- **pyrel**: builds a package from the python module
+- **pyrel**: installs the newly built package into a virtual environment
+- **user**: calls the program by name (so we'll know it is added to path)
+- **user**: optionally runs it again (so we'll know the program ends without error code)
+- **pyrel**: deletes all the temp files created
 
 # Install
 
