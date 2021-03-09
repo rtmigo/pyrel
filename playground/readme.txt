@@ -1,0 +1,1 @@
+This directory contains code fragments used testing for testing particular functions manually.
