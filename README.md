@@ -5,9 +5,13 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-Reusable shell script for building and testing Python packages.
+This script will help to: 
 
-Using this file allows you to write less boilerplate code when using 
+* build your Python package (with [twine](https://pypi.org/project/twine/))
+* install it with pip3 into a temporary [virtual environment](https://docs.python.org/3/library/venv.html) 
+* let you check whether it really installed there
+
+This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io)).
 
 # What is pyrel
 
