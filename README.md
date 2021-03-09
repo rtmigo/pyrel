@@ -48,7 +48,7 @@ set -e && source "${0%/*}/scripts/pyrel.sh"
 
 ``` bash
 $ cd /abc/myproject
-$ source path/to/pyrel.sh  # ok because /abc/myproject/setup.py exists 
+$ source path/to/pyrel.sh  # this works
 ```
 
 ``` bash
