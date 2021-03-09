@@ -7,7 +7,7 @@ Bash scripts for building and testing Python packages.
 The `pyrel` files should be just **placed in the project directory**. This allows, for example, 
 using them with GitHub actions.
 
-<details><summary>If you prefer GIT subtrees</summary><br/>
+<details><summary>if you prefer GIT subtrees</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -24,7 +24,7 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 
 </details>
 
-<details><summary>If you prefer GIT submodules</summary><br/>
+<details><summary>if you prefer GIT submodules</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -48,7 +48,7 @@ $ rm -rf .git/modules/scripts/pyrel
 ```
 </details>
 
-<details><summary>If you prefer SVN</summary><br/>
+<details><summary>if you prefer SVN</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
