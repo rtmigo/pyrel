@@ -2,13 +2,6 @@
 
 Bash scripts for building and testing Python packages.
 
-Testing a package for command-line program:
-- **pyrel**: builds a package from the python module
-- **pyrel**: installs the newly built package into a virtual environment
-- **user**: calls the program by name (so we'll know it is added to path)
-- **user**: optionally runs it again (so we'll know the program ends without error code)
-- **pyrel**: deletes all the temp files created
-
 # Install
 
 The `pyrel` files are not installed on the system. They are **placed in the project directory**. This allows, for example, 
@@ -75,21 +68,34 @@ The expected project layout is something like that:
 
 ```
 pythonproject
-| myprogram/
-| scripts/pyrel/   <-- the scripts belong here
-| setup.py
-| ... etc ...
-| test_pkg.sh      <-- we will automate testing here
+| use_pyrel.sh        # user-created scripts
+| use_pyrel_again.sh  # user-created scripts
+| 
+| scripts/pyrel/      # pyrel installed here
+|
+| myprogram/          # python standard project layout
+| tests/              # python standard project layout
+| setup.py            # python standard project layout
 ```
 
-Sample `test_pkg.sh`:
+
+# Test a package that installs as command-line utility
+
+## test_package.sh
 
 ```bash
 #!/bin/bash
 set -e && source "${0%/*}"/scripts/pyrel/include.sh
 package_test_setup
 
-flocagen --help
+myprogram --help
+myprogram --version
 
 package_test_teardown
 ```
+
+- **pyrel**: builds a package from the python module
+- **pyrel**: installs the newly built package into a virtual environment
+- **user**: calls the program by name (so we'll know it is added to path)
+- **user**: optionally runs it again (so we'll know the program ends without error code)
+- **pyrel**: deletes all the temp files created
