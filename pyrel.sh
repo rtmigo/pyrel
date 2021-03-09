@@ -12,6 +12,7 @@ fi
 echo "OK, we're in the project root"
 
 function realpath() {
+  # emulating realpath for MacOS (it does not have it in 2021)
   # refactored code from https://stackoverflow.com/a/18443300
   local OURPWD
   OURPWD=$PWD
