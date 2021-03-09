@@ -118,7 +118,7 @@ pyrel_venv_end
 pyrel_venv_end
 ```
 
-Temporary environments will be removed on errors too  
+Temporary environments will be automatically removed on errors  
 
 ``` bash
 #!/bin/bash
