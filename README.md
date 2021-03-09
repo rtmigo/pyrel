@@ -86,7 +86,7 @@ pythonproject
 
 Sample `test_pkg.sh`:
 
-```
+```bash
 #!/bin/bash
 set -e && cd "${0%/*}"
 source scripts/pyrel/include.sh
