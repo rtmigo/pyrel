@@ -3,8 +3,14 @@
 
 set -e
 
-project_root_dir="${0%/*}" # this file is included from the script at root dir
-cd "$project_root_dir"
+# this script should be included when the current directory is the project root
+
+project_root_dir=$(realpath .) # "${0%/*}" # this file is included from the script at root dir
+echo "$project_root_dir"
+#exit 0
+
+#cd "$project_root_dir"
+
 
 function begin_builder_venv() {
   tmp_builder_venv_dir=$(mktemp -d -t ci-XXXXXXXXXX)

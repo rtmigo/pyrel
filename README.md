@@ -1,13 +1,33 @@
 # pyrel
 
-Bash scripts for building and testing Python packages.
+Bash functions for building and testing Python packages.
 
 # Install
 
-The `pyrel` files should be just **placed in the project directory**. This allows, for example, 
-using them with GitHub actions.
+`pyrel.sh` is just a small script file meant to be included when you're at the project root:
 
-<details><summary>if you prefer GIT subtrees</summary><br/>
+```bash
+cd /abc/myproject
+source path/to/pyrel.sh
+```
+
+You can also automate copying the latest version to `/abc/myproject/scripts/pyrel/`.
+
+<details><summary>If you prefer SVN</summary><br/>
+
+Create `/abc/pythonproject/scripts/pyrel`:
+
+```bash
+$ cd /abc/pythonproject
+$ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
+```
+
+Update with the same command.
+
+</details>
+
+
+<details><summary>If you prefer GIT subtrees</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -24,7 +44,7 @@ $ git subtree pull -m "update pyrel" --prefix scripts/pyrel https://github.com/r
 
 </details>
 
-<details><summary>if you prefer GIT submodules</summary><br/>
+<details><summary>If you prefer GIT submodules</summary><br/>
 
 Create `/abc/pythonproject/scripts/pyrel`:
 
@@ -48,18 +68,6 @@ $ rm -rf .git/modules/scripts/pyrel
 ```
 </details>
 
-<details><summary>if you prefer SVN</summary><br/>
-
-Create `/abc/pythonproject/scripts/pyrel`:
-
-```bash
-$ cd /abc/pythonproject
-$ svn export https://github.com/rtmigo/pyrel/trunk scripts/pyrel --force
-```
-
-Update with the same command.
-
-</details>
 
 
 # Use
