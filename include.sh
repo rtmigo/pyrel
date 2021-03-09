@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: (c) 2021 Art Galkin <ortemeo@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
+
 set -e
 
 function begin_builder_venv() {
@@ -69,4 +72,5 @@ function package_test_teardown() {
   rm -rf "$tmp_runner_dir"
   rm -rf ./build ./dist ./*.egg-info
   end_runner_venv
+  echo "All done."
 }

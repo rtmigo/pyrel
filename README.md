@@ -88,15 +88,11 @@ Sample `test_pkg.sh`:
 
 ```
 #!/bin/bash
-set -e
+set -e && cd "${0%/*}"
+source scripts/pyrel/include.sh
+package_test_setup
 
-## SETUP ##
-source scripts/pyrel/setup.inc.sh
+flocagen --help
 
-## TEST ##
-myprogram --version # just check the program runs and doesn't return error code
-
-## TEAR DOWN ##
-cd "$scriptParentDir"
-source scripts/pyrel/teardown.inc.sh
+package_test_teardown
 ```
