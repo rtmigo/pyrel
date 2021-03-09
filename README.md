@@ -2,6 +2,8 @@
 
 Bash functions for building and testing Python packages.
 
+#!!! The `package_test_teardown` function removes `./build`, `./dist`, `./*.egg-info` from the
+
 # Install
 
 `pyrel.sh` is just a small script file meant to be included when you're at the project root:
