@@ -23,7 +23,8 @@ extremely short and simple.
 
 # Install
 
-`pyrel.sh` is a script file with no external dependencies. Just download it and `source` in a Python project directory.
+`pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere 
+in the project directory.
 
 ``` bash
 $ cd /abc/myproject
