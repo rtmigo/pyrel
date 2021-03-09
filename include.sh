@@ -3,6 +3,9 @@
 
 set -e
 
+project_root_dir="${0%/*}" # this file is included from the script at root dir
+cd "$project_root_dir"
+
 function begin_builder_venv() {
   tmp_builder_venv_dir=$(mktemp -d -t ci-XXXXXXXXXX)
   python3 -m venv "$tmp_builder_venv_dir"

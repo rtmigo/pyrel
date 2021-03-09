@@ -86,11 +86,10 @@ Sample `test_pkg.sh`:
 
 ```bash
 #!/bin/bash
-set -e && cd "${0%/*}"
-source scripts/pyrel/include.sh
+set -e && source "${0%/*}"/scripts/pyrel/include.sh
 package_test_setup
 
-myprogram --help
+flocagen --help
 
 package_test_teardown
 ```
