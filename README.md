@@ -88,7 +88,10 @@ pyrel_test_end
 
 # Details
 
-## Temporary virtual environments
+## Virtual environments
+
+`pyrel_venv_begin` and `pyrel_venv_end` let you easy create and delete a virtual 
+environment in a temporary directory.
 
 ``` bash
 #!/bin/bash
