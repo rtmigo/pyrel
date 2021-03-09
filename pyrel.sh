@@ -11,7 +11,6 @@ echo "$project_root_dir"
 
 #cd "$project_root_dir"
 
-
 function begin_builder_venv() {
   tmp_builder_venv_dir=$(mktemp -d -t ci-XXXXXXXXXX)
   python3 -m venv "$tmp_builder_venv_dir"
