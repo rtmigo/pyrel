@@ -56,7 +56,7 @@ We assume you have a working **python3**, **pip3** and **python3-venv**.
 set -e && source path/to/pyrel.sh
 ```
 
-You should only run this script from the project directory
+The script should be run only from the project directory
 
 ``` bash
 $ cd /abc/myproject
