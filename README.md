@@ -15,7 +15,9 @@ This is an intentionally minimalistic solution (not like [tox](https://tox.readt
 
 ### Why I made this
 
-I needed code that was equally easy to run on a local machine and as part of GitHub Actions.
+I needed a script that was equally easy to run on a local machine and as a part of GitHub Actions.
+The script code should be versatile enough to fit all my packages. And at the same time easy to 
+improve.
 
 # What is pyrel
 
