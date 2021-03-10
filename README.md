@@ -14,13 +14,9 @@ This **bash script** will:
 
 This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
 
-### Why I made this
-
-I needed a reusable script that was equally easy to run on a local machine and with
+It is a reusable script that was equally easy to run on a local machine and with
 a [CI tool](https://github.com/actions) remotely. So the CI is optional, and it invokes the same
 script that runs locally.
-
-The script code should be versatile enough to fit all my packages.
 
 # What is pyrel
 
