@@ -56,24 +56,14 @@ We assume you have a working **python3**, **pip3** and **python3-venv**.
 set -e && source path/to/pyrel.sh
 ```
 
-**But Make sure you're in the project directory**
+But Make sure you're in the project directory
 
 ``` bash
 $ cd /abc/myproject
-$ source path/to/pyrel.sh  # this works
-```
+$ /path/to/script_that_use_pyrel.sh # this this works
 
-``` bash
 $ cd /abc/photos_(not_project)
-$ source path/to/pyrel.sh  # shows error, does nothing
-```
-
-So even if you place the `source` into a `myscript.sh`, this file should only be called from the 
-project directory
-
-``` bash
-$ cd /abc/myproject
-$ ./myscript.sh
+$ /path/to/script_that_use_pyrel.sh  # shows error, does nothing
 ```
 
 # Sample scripts
