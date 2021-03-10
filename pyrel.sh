@@ -56,7 +56,7 @@ header() {
 
 DEFAULT_TRAP_COMMAND="header EXITING"
 
-trap_add() {
+function trap_add() {
     # slightly modified https://stackoverflow.com/a/30650385
     #
     # Sample:
@@ -72,6 +72,11 @@ trap_add() {
     #   in trap B
 
     [ -z "${DEFAULT_TRAP_COMMAND}" ] && DEFAULT_TRAP_COMMAND="echo Exiting @ $(date)"
+
+    local trap_add_cmd
+    local new_cmd
+    local trap_add_name
+    local existing_cmd
 
     trap_add_cmd=$1; shift || fatal "${FUNCNAME[0]} usage error"
 
