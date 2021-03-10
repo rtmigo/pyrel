@@ -12,9 +12,11 @@ This **bash script** will:
   [virtual environment](https://docs.python.org/3/library/venv.html)
 * let you **check whether it really installed** there
 
-This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
+This is an intentionally minimalistic solution. (not like [tox](https://tox.readthedocs.io))
 
-It is a reusable script that was equally easy to run on a local machine and with
+### Why I made this
+
+I wanted a reusable script that was equally easy to run on a local machine and with
 a [CI tool](https://github.com/actions) remotely. So the CI is optional, and it invokes the same
 script that runs locally.
 
