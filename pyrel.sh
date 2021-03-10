@@ -44,8 +44,17 @@ twine_check_strict=true # useful ?
 log() { printf '%s\n' "$*"; }
 error() { log "ERROR: $*" >&2; }
 fatal() { error "$@"; exit 1; }
+header() {
+  echo
+  echo "================================================================================"
+  echo "  $1"
+  echo "================================================================================"
+  echo
+}
 
 ####################################################################################################
+
+DEFAULT_TRAP_COMMAND="header EXITING"
 
 trap_add() {
     # slightly modified https://stackoverflow.com/a/30650385
@@ -62,56 +71,25 @@ trap_add() {
     #   in trap A
     #   in trap B
 
+    [ -z "${DEFAULT_TRAP_COMMAND}" ] && DEFAULT_TRAP_COMMAND="echo Exiting @ $(date)"
+
     trap_add_cmd=$1; shift || fatal "${FUNCNAME[0]} usage error"
+
     new_cmd=
     for trap_add_name in "$@"; do
         # Grab the currently defined trap commands for this trap
         existing_cmd=$(trap -p "${trap_add_name}" |  awk -F"'" '{print $2}')
 
         # Define default command
-        [ -z "${existing_cmd}" ] && existing_cmd="echo exiting @ $(date)"
+        [ -z "${existing_cmd}" ] && existing_cmd="$DEFAULT_TRAP_COMMAND"
 
         # Generate the new command
         new_cmd="${existing_cmd};${trap_add_cmd}"
 
         # Assign the test
         # shellcheck disable=SC2064
-        trap   "${new_cmd}" "${trap_add_name}" || \
+        trap "${new_cmd}" "${trap_add_name}" || \
           fatal "unable to add to trap ${trap_add_name}"
-    done
-}
-
-trap_insert() {
-    # slightly modified https://stackoverflow.com/a/30650385
-    #
-    # Sample:
-    #   set -e
-    #   trap_insert 'echo "in trap A"' EXIT
-    #   trap_insert 'echo "in trap B"' EXIT
-    #   echo "before error"
-    #   run_bad_command
-    #   echo "after error"
-    # Output:
-    #   before error
-    #   in trap B
-    #   in trap A
-
-    trap_add_cmd=$1; shift || fatal "${FUNCNAME[0]} usage error"
-    new_cmd=
-    for trap_add_name in "$@"; do
-        # Grab the currently defined trap commands for this trap
-        existing_cmd=$(trap -p "${trap_add_name}" |  awk -F"'" '{print $2}')
-
-        # Define default command
-        [ -z "${existing_cmd}" ] && existing_cmd="echo exiting @ $(date)"
-
-        # Generate the new command
-        new_cmd="${trap_add_cmd};${existing_cmd}" # AG: Changed!
-
-        # Assign the test
-        # shellcheck disable=SC2064
-        trap   "${new_cmd}" "${trap_add_name}" || \
-          fatal "unable to insert to trap ${trap_add_name}"
     done
 }
 
@@ -132,7 +110,7 @@ function pyrel_venv_begin() {
   source "$temp_venv_dir/bin/activate"
 
   # inserting trap before other cleanup to handle nested venvs
-  trap_insert "set +e && pyrel_venv_end && set -e" EXIT
+  trap_add "set +e && pyrel_venv_end && set -e" EXIT
 }
 
 function pyrel_venv_end() {
@@ -219,13 +197,13 @@ function pyrel_test_begin() {
   if_dir_unexisting_remove_on_exit "$project_root_dir/build"
   if_dir_unexisting_remove_on_exit "$project_root_dir/*.egg-info"
 
-  echo "== BUILDING PACKAGE =="
+  header "BUILDING PACKAGE"
   pyrel_venv_begin
   build_package
   check_package
   pyrel_venv_end
 
-  echo "== INSTALLING PACKAGE =="
+  header "INSTALLING PACKAGE"
   pyrel_venv_begin
   install_package_from_latest_whl
 
@@ -234,12 +212,12 @@ function pyrel_test_begin() {
   cd "$nowhere_dir" || return 1
   trap_add "rmdir_with_msg $nowhere_dir" EXIT
 
-  echo "== RUNNING =="
+  header "USER COMMANDS BLOCK"
 }
 
 function pyrel_test_end() {
 
-  echo "== REMOVING TEMP AND DIST FILES =="
+  header "REMOVING TEMP AND DIST FILES"
 
   # Python 3.7 sometimes fails when trying to --clear venv while the current
   # directory is created by mktemp. That's why we move to the project before
