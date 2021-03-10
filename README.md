@@ -5,11 +5,11 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-This bash script will: 
+This **bash script** will: 
 
-* build your Python PyPi package (with [twine](https://pypi.org/project/twine/))
-* install it locally with pip3 into a temporary [virtual environment](https://docs.python.org/3/library/venv.html) 
-* let you check whether it really installed there
+* build your Python **PyPi package** (with [twine](https://pypi.org/project/twine/))
+* **install it locally** with pip3 into a temporary [virtual environment](https://docs.python.org/3/library/venv.html) 
+* let you **check whether it really installed** there
 
 This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
 
