@@ -55,3 +55,4 @@ jobs:
         run: |
           cd sample_project
           ./test_pkg_as_module.sh
+          [ $(< ~/output.txt) == "hi!" ] || exit 1
