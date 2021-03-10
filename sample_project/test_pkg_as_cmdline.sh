@@ -2,5 +2,10 @@
 set -e && source "scripts/pyrel.sh"
 
 pyrel_test_begin # check it builds
-greeter # check it runs
+
+# check it runs
+greeter
+# also save the output to a file
+greeter > ~/output.txt
+
 pyrel_test_end # cleanup

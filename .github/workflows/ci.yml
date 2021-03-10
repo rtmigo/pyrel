@@ -33,6 +33,7 @@ jobs:
       run: |
         cd sample_project
         ./test_pkg_as_cmdline.sh
+        [ grep -q "hi!" "~/output.txt" ] || exit 1
 
   test-module:
       runs-on: ${{ matrix.os }}
