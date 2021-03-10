@@ -44,6 +44,7 @@ extremely short and simple.
 `pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere 
 in the project directory.
 
+We assume you have a working **python3**, **pip3** and **python3-venv**.
 
 # How to import
 
