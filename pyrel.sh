@@ -11,8 +11,8 @@ set -e
 function realpath() {
   # emulating realpath for MacOS (10.14 does not have it @2021)
   # refactored code from https://stackoverflow.com/a/18443300
-  local our_pwd
-  our_pwd=$PWD
+  local original_pwd
+  original_pwd=$PWD
   cd "$(dirname "$1")"
   local current_link
   current_link=$(readlink "$(basename "$1")")
@@ -22,7 +22,7 @@ function realpath() {
   done
   local result
   result="$PWD/$(basename "$1")"
-  cd "$our_pwd"
+  cd "$original_pwd"
   echo "$result"
 }
 
