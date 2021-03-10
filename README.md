@@ -5,26 +5,27 @@
 
 # [pyrel](https://github.com/rtmigo/pyrel)
 
-This **bash script** will: 
+This **bash script** will:
 
 * build your Python **PyPi package** (with [twine](https://pypi.org/project/twine/))
-* **install it locally** with pip3 into a temporary 
-  [virtual environment](https://docs.python.org/3/library/venv.html) 
+* **install it locally** with pip3 into a temporary
+  [virtual environment](https://docs.python.org/3/library/venv.html)
 * let you **check whether it really installed** there
 
 This is an intentionally minimalistic solution (not like [tox](https://tox.readthedocs.io))
 
 ### Why I made this
 
-I needed a script that was equally easy to run on a local machine and in a cloud (like GitHub 
-Actions). So GitHub Action will call the same script that is already checked locally.
+I needed a reusable script that was equally easy to run on a local machine and with
+a [CI tool](https://github.com/actions) remotely. So the CI is optional, and it invokes the same
+script that runs locally.
 
 The script code should be versatile enough to fit all my packages.
 
 # What is pyrel
 
-A single `pyrel.sh` file, that declares several bash functions. After you `source pyrel.sh`, you 
-can call previously unavailable commands such as `build_package`.
+A single `pyrel.sh` file, that declares several bash functions. After you `source pyrel.sh`, you can
+call previously unavailable commands such as `build_package`.
 
 `pyrel.sh` is meant to be placed inside the project.
 
@@ -39,14 +40,14 @@ pythonproject
 | pyrel.sh              <-- also placed somewhere in the project
 
 ```
-`pyrel.sh` contains most of the boilerplate code, so `test_package.sh` and `build_package.sh` 
-can be 
-extremely short and simple.
+
+`pyrel.sh` contains most of the boilerplate code, so `test_package.sh` and `build_package.sh`
+can be extremely short and simple.
 
 # Install
 
-`pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere 
-in the project directory.
+`pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere in
+the project directory.
 
 We assume you have a working **python3**, **pip3** and **python3-venv**.
 
@@ -109,10 +110,12 @@ pyrel_test_end
 # Customizing
 
 By default, the script runs the following to build the package:
+
 ``` bash
 pip3 install setuptools wheel twine --force-reinstall
 python3 setup.py sdist bdist_wheel
 ```
+
 If you need to perform additional steps, there is no need to modify `pyrel.sh`. You can  
 redefine `build_package` function directly in your script:
 
@@ -136,14 +139,12 @@ myprogram --version
 pyrel_test_end
 ```
 
-
-
 # Functions
 
 ## Virtual environments
 
-`pyrel_venv_begin` and `pyrel_venv_end` let you easy create and delete a virtual 
-environment in a temporary directory.
+`pyrel_venv_begin` and `pyrel_venv_end` let you easy create and delete a virtual environment in a
+temporary directory.
 
 ``` bash
 #!/bin/bash
@@ -171,7 +172,7 @@ pyrel_venv_end
 pyrel_venv_end
 ```
 
-Temporary environments will be automatically removed on errors  
+Temporary environments will be automatically removed on errors
 
 ``` bash
 #!/bin/bash
