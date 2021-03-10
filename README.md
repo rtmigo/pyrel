@@ -118,18 +118,17 @@ By default, the script runs the following to build the package:
 pip3 install setuptools wheel twine --force-reinstall
 python3 setup.py sdist bdist_wheel
 ```
-If you need to perform additional steps, there is no need to modify `pyrel.sh`. You can just 
-redefine `build_package` in your script:
+If you need to perform additional steps, there is no need to modify `pyrel.sh`. You can  
+redefine `build_package` function directly in your script:
 
 ``` bash
 #!/bin/bash
 set -e && source pyrel.sh
 
 function build_package() {
-  # ... do anything else ...
+  # ... replace these lines with what you need ...
   pip3 install setuptools wheel twine --force-reinstall
   python3 setup.py sdist bdist_wheel
-  #... and something more ...
 }
 
 # continue as usual
