@@ -17,8 +17,8 @@ This is an intentionally minimalistic solution. (not like [tox](https://tox.read
 ### Why I made this
 
 I wanted a reusable script that was equally easy to run on a local machine and with
-a [CI tool](https://github.com/actions) remotely. So the CI is optional and replaceable. External
-tools just invoke it invokes the same script that runs locally.
+a [CI tool](https://github.com/actions) remotely. So the CI is optional and replaceable. CI just
+invokes the same script that runs locally.
 
 # What is pyrel
 
