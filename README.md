@@ -60,10 +60,10 @@ The script should be run only from the project directory
 
 ``` bash
 $ cd /abc/myproject
-$ /path/to/script_that_use_pyrel.sh # this this works
+$ /xyz/script_that_use_pyrel.sh # this works
 
 $ cd /abc/photos_(not_project)
-$ /path/to/script_that_use_pyrel.sh  # shows error, does nothing
+$ /xyz/script_that_use_pyrel.sh  # shows error, does nothing
 ```
 
 # Sample scripts
