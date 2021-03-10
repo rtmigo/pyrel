@@ -111,6 +111,39 @@ myprogram --version
 pyrel_test_end
 ```
 
+# Customizing
+
+By default, the script runs the following to build the package:
+``` bash
+pip3 install setuptools wheel twine --force-reinstall
+python3 setup.py sdist bdist_wheel
+```
+If you need to perform additional steps, there is no need to modify `pyrel.sh`. You can just 
+redefine `build_package` in your script:
+
+``` bash
+#!/bin/bash
+set -e && source pyrel.sh
+
+function build_package() {
+  # ... do anything else ...
+  pip3 install setuptools wheel twine --force-reinstall
+  python3 setup.py sdist bdist_wheel
+  #... and something more ...
+}
+
+# continue as usual
+
+pyrel_test_begin
+
+myprogram --help       
+myprogram --version
+ 
+pyrel_test_end
+```
+
+
+
 # Details
 
 ## Virtual environments

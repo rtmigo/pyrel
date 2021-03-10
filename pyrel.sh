@@ -199,6 +199,9 @@ function pyrel_test_begin() {
 
   header "BUILDING PACKAGE"
   pyrel_venv_begin
+
+  cd_project
+  python3 -m pip install --upgrade pip
   build_package
   check_package
   pyrel_venv_end
@@ -212,12 +215,12 @@ function pyrel_test_begin() {
   cd "$nowhere_dir" || return 1
   trap_add "rmdir_with_msg $nowhere_dir" EXIT
 
-  header "USER COMMANDS BLOCK"
+  header "START OF USER COMMANDS BLOCK (after pyrel_test_begin)"
 }
 
 function pyrel_test_end() {
 
-  header "REMOVING TEMP AND DIST FILES"
+  header "END OF OF USER COMMANDS BLOCK (pyrel_test_end)"
 
   # Python 3.7 sometimes fails when trying to --clear venv while the current
   # directory is created by mktemp. That's why we move to the project before
