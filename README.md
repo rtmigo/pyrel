@@ -15,8 +15,8 @@ This is an intentionally minimalistic solution (not like [tox](https://tox.readt
 
 ### Why I made this
 
-I needed a script that was equally easy to run on a local machine and as a part of GitHub Actions.
-So GitHub Action will just call the same script that is already checked locally.
+I needed a script that was equally easy to run on a local machine and in a cloud (like GitHub 
+Actions). So GitHub Action will call the same script that is already checked locally.
 
 The script code should be versatile enough to fit all my packages.
 
