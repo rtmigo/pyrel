@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e && source "scripts/pyrel.sh"
 
-pyrel_test_begin # check it builds
+pyrel_test_begin  # check we can build the package `greeter`
 
-# check it runs
+# check it runs as a command
 greeter
-# also save the output to a file
+
+# optionally save output to a file to perform some additional checks later
 greeter > ~/output.txt
 
-pyrel_test_end # cleanup
+pyrel_test_end  # cleanup
