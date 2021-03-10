@@ -4,9 +4,12 @@
 
 set -e
 
+TWINE_CHECK=true # should we call `twine check` from `pyrel_test_begin`?
+TWINE_CHECK_STRICT=true # works only if TWINE_CHECK is true
+
 ####################################################################################################
 
-# without the realpath we cannot get the real project directory, so we start with it
+# without the `realpath` we cannot get the real project directory, so we start with it
 
 function realpath() {
   # emulating realpath for MacOS (10.14 does not have it @2021)
@@ -39,7 +42,7 @@ project_root_dir=$(realpath .)
 
 ####################################################################################################
 
-twine_check_strict=true # useful ?
+TWINE_CHECK_STRICT=true=true # useful ?
 
 log() { printf '%s\n' "$*"; }
 error() { log "ERROR: $*" >&2; }
@@ -148,11 +151,13 @@ function build_package() {
 }
 
 function check_package() {
-  cd "$project_root_dir" || return 1
-  if [ $twine_check_strict ]; then
-    twine check ./dist/* --strict
-  else
-    twine check ./dist/*
+  if [ $TWINE_CHECK = true ]; then
+    cd "$project_root_dir" || return 1
+    if [ $TWINE_CHECK_STRICT = true ]; then
+      twine check ./dist/* --strict
+    else
+      twine check ./dist/*
+    fi
   fi
 }
 
