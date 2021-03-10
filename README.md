@@ -144,7 +144,7 @@ pyrel_test_end
 
 
 
-# Details
+# Functions
 
 ## Virtual environments
 
