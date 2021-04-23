@@ -49,15 +49,12 @@ We assume you have a working **python3**, **pip3** and **python3-venv**.
 `pyrel.sh` is a script file with no external dependencies. Just download it and place somewhere in
 the project directory.
 
-Downloading pyrel can also be automated with **curl**:
+Downloading pyrel can also be automated:
 
 ``` bash
 $ cd /abc/myproject
 $ curl -LJO https://raw.githubusercontent.com/rtmigo/pyrel/master/pyrel.sh
 ```
-
-Or with **wget**:
-
 ``` bash
 $ cd /abc/myproject
 $ wget -O pyrel.sh https://raw.githubusercontent.com/rtmigo/pyrel/master/pyrel.sh
