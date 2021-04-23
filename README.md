@@ -55,6 +55,7 @@ Downloading pyrel can also be automated:
 $ cd /abc/myproject
 $ curl -LJO https://raw.githubusercontent.com/rtmigo/pyrel/master/pyrel.sh
 ```
+or
 ``` bash
 $ cd /abc/myproject
 $ wget -O pyrel.sh https://raw.githubusercontent.com/rtmigo/pyrel/master/pyrel.sh
