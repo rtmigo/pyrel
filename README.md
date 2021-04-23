@@ -56,7 +56,7 @@ $ cd /abc/myproject
 $ curl -LJO https://raw.githubusercontent.com/rtmigo/pyrel/master/pyrel.sh
 ```
 
-or with **wget**
+Or with **wget**:
 
 ``` bash
 $ cd /abc/myproject
